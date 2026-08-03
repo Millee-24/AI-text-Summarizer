@@ -1,15 +1,11 @@
 # AI Persona Summarizer 
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-Backend-green.svg)
-![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-orange.svg)
-
 An intelligent, aesthetically-pleasing web application that not only summarizes your text and web articles but customizes the summary based on **who you are** (Researcher, Student, Teacher, or Child). Powered by LexRank for extractive summarization, YAKE for keyword extraction, and Google's Gemini for persona-based adaptation.
 
 ## ✨ Features
 
-- **Multi-Source Input:** Paste raw text, drop a URL (auto-scraped), or upload a PDF.
-- **Persona-Based Summarization:** Adapt complex text into tones that fit your need.
+- Multi-Source Input:Paste raw text, drop a URL (auto-scraped), or upload a PDF.
+- Persona-Based Summarization:Adapt complex text into tones that fit your need.
     - 🔬 *Researcher* (Technical & precise)
     - 📚 *Student* (Exam-ready concepts)
     - 🎓 *Teacher* (Structured & clear)
@@ -21,8 +17,8 @@ An intelligent, aesthetically-pleasing web application that not only summarizes 
 ##  Architecture
 
 The application is fully decoupled, consisting of:
-1. **Backend API (`server.py`)**: A lightweight Flask server that orchestrates the heavy lifting—web scraping, text preprocessing, NLP summarization, keyword extraction, and generative AI persona rewriting.
-2. **Frontend (`frontend/`)**: A pure HTML/CSS/JS presentation layer. No bloated frameworks; just clean, animated Vanilla web technologies that fetch data asynchronously from the API.
+1. **Backend API (`server.py`): A lightweight Flask server that orchestrates the heavy lifting—web scraping, text preprocessing, NLP summarization, keyword extraction, and generative AI persona rewriting.
+2. **Frontend (`frontend/`): A pure HTML/CSS/JS presentation layer. No bloated frameworks; just clean, animated Vanilla web technologies that fetch data asynchronously from the API.
 
 ## 🚀 Quick Start
 
