@@ -1,5 +1,5 @@
 # AI Persona Summarizer 
-
+Test it live: https://ai-text-summarizer-03ua.onrender.com/
 An intelligent, aesthetically-pleasing web application that not only summarizes your text and web articles but customizes the summary based on **who you are** (Researcher, Student, Teacher, or Child). Powered by LexRank for extractive summarization, YAKE for keyword extraction, and Google's Gemini for persona-based adaptation.
 
 ## ✨ Features
