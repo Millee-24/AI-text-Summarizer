@@ -17,8 +17,8 @@ An intelligent, aesthetically-pleasing web application that not only summarizes 
 ##  Architecture
 
 The application is fully decoupled, consisting of:
-1. **Backend API (`server.py`): A lightweight Flask server that orchestrates the heavy lifting—web scraping, text preprocessing, NLP summarization, keyword extraction, and generative AI persona rewriting.
-2. **Frontend (`frontend/`): A pure HTML/CSS/JS presentation layer. No bloated frameworks; just clean, animated Vanilla web technologies that fetch data asynchronously from the API.
+1. Backend API (`server.py`): A lightweight Flask server that orchestrates the heavy lifting—web scraping, text preprocessing, NLP summarization, keyword extraction, and generative AI persona rewriting.
+2. Frontend (`frontend/`): A pure HTML/CSS/JS presentation layer. No bloated frameworks; just clean, animated Vanilla web technologies that fetch data asynchronously from the API.
 
 ## 🚀 Quick Start
 
@@ -40,7 +40,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-*Note: The NLP summarizer (`sumy`) uses `nltk`. You may need to download the `punkt` tokenizer:*
+Note: The NLP summarizer (`sumy`) uses `nltk`. You may need to download the `punkt` tokenizer:
 ```bash
 python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 ```
