@@ -14,8 +14,12 @@ from keywords import extract_keywords, highlight_keywords
 from persona import rewrite_the_summary_for_persona, calculate_persona_stats
 from translate import summary_translation, translate_keywords
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend', static_url_path='/')
 CORS(app)
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 LANGUAGES = {
     "Hindi": "hi", "Punjabi": "pa", "French": "fr",
