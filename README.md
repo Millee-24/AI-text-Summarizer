@@ -1,4 +1,4 @@
-# AI Persona Summarizer ✦
+# AI Persona Summarizer 
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-Backend-green.svg)
@@ -18,7 +18,7 @@ An intelligent, aesthetically-pleasing web application that not only summarizes 
 - **Instant Translation:** Translate your generated summary into 20+ languages instantly.
 - **Stunning UI/UX:** A fully custom, dark-mode glassmorphism frontend with sleek micro-animations and staggered loading states.
 
-## 🏗️ Architecture
+##  Architecture
 
 The application is fully decoupled, consisting of:
 1. **Backend API (`server.py`)**: A lightweight Flask server that orchestrates the heavy lifting—web scraping, text preprocessing, NLP summarization, keyword extraction, and generative AI persona rewriting.
@@ -75,4 +75,4 @@ python -m http.server 8000
 Visit `http://localhost:8000` in your browser to experience the app.
 
 ---
-*Built with ❤️ utilizing LexRank, YAKE, and Google Gemini.*
+Built with ❤️ utilizing LexRank, YAKE, and Google Gemini.
