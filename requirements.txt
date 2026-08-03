@@ -3,6 +3,7 @@ deep-translator
 requests
 beautifulsoup4
 sumy
+nltk==3.8.1
 streamlit
 matplotlib
 wordcloud
