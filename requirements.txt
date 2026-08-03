@@ -10,3 +10,4 @@ google-genai
 pdfplumber
 flask
 flask-cors
+gunicorn
