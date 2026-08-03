@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Persona Summarizer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Hero Section -->
+        <header class="hero slide-in">
+            <h1 class="hero-title">Read less.<br><span class="highlight">Know more.</span></h1>
+            <p class="hero-subtitle">Paste any text, drop a URL, and get a summary tuned to how you think.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Left Panel: Input Section -->
+            <div class="input-panel slide-in-delay-1">
+                <div class="step">
+                    <span class="step-label">STEP 1 — YOUR CONTENT</span>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="text">
+                            <i data-lucide="file-text"></i> Text
+                        </button>
+                        <button class="tab-btn" data-tab="url">
+                            <i data-lucide="link"></i> URL
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="tab-text">
+                        <textarea id="text-input" placeholder="Paste your article, research paper, or passage here..." spellcheck="false"></textarea>
+                    </div>
+
+                    <div class="tab-content" id="tab-url">
+                        <div class="input-wrapper">
+                            <i data-lucide="globe"></i>
+                            <input type="url" id="url-input" placeholder="https://en.wikipedia.org/wiki/..." spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step mt-8">
+                    <span class="step-label">STEP 2 — WHO ARE YOU?</span>
+                    <div class="persona-grid">
+                        <div class="persona-card active" data-persona="Researcher">
+                            <div class="persona-icon" style="color: #5DCAA5;">
+                                <i data-lucide="microscope"></i>
+                            </div>
+                            <h3>Researcher</h3>
+                            <p>Technical & precise</p>
+                        </div>
+                        <div class="persona-card" data-persona="Student">
+                            <div class="persona-icon" style="color: #378ADD;">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <h3>Student</h3>
+                            <p>Exam-ready concepts</p>
+                        </div>
+                        <div class="persona-card" data-persona="Teacher">
+                            <div class="persona-icon" style="color: #EF9F27;">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                            <h3>Teacher</h3>
+                            <p>Structured & clear</p>
+                        </div>
+                        <div class="persona-card" data-persona="Child">
+                            <div class="persona-icon" style="color: #D85A30;">
+                                <i data-lucide="star"></i>
+                            </div>
+                            <h3>Child</h3>
+                            <p>Simple & friendly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step mt-8">
+                    <span class="step-label">STEP 3 — TRANSLATE TO</span>
+                    <div class="select-wrapper">
+                        <select id="language-select">
+                            <option value="None">None — keep in English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="French">French</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="German">German</option>
+                            <option value="Chinese (Simplified)">Chinese</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Russian">Russian</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="select-arrow"></i>
+                    </div>
+                </div>
+
+                <button id="summarize-btn" class="btn-primary mt-8">
+                    <i data-lucide="sparkles"></i> Summarize now
+                </button>
+                <div id="error-message" class="error-text hidden"></div>
+            </div>
+
+            <!-- Right Panel: Results Section -->
+            <div class="results-panel slide-in-delay-2" id="results-panel">
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon-wrapper">
+                        <i data-lucide="wand-2"></i>
+                    </div>
+                    <p>Your tailored summary will appear here.</p>
+                </div>
+
+                <div class="loading-state hidden" id="loading-state">
+                    <div class="spinner"></div>
+                    <p class="loading-text" id="loading-text">Cleaning text...</p>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="results-content hidden" id="results-content">
+                    <div class="stats-row" id="stats-container">
+                        <!-- Stats injected via JS -->
+                    </div>
+
+                    <div class="result-card primary-result fade-in-up">
+                        <div class="card-header">
+                            <span class="card-title">
+                                <i data-lucide="file-text" class="mr-2"></i> Summary
+                            </span>
+                            <button class="icon-btn" title="Copy" onclick="copyToClipboard('summary-content')">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <div class="card-body" id="summary-content">
+                            <!-- Summary injected here -->
+                        </div>
+                    </div>
+
+                    <div class="result-card secondary-result fade-in-up delay-1 hidden" id="translation-card">
+                        <div class="card-header">
+                            <span class="card-title">
+                                <i data-lucide="globe" class="mr-2"></i> Translation
+                            </span>
+                            <button class="icon-btn" title="Copy" onclick="copyToClipboard('translation-content')">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <div class="card-body" id="translation-content">
+                            <!-- Translation injected here -->
+                        </div>
+                    </div>
+
+                    <div class="keywords-section fade-in-up delay-2">
+                        <span class="step-label">KEY CONCEPTS</span>
+                        <div class="chip-container" id="keywords-container">
+                            <!-- Keywords injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

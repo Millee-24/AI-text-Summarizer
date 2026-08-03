@@ -1,0 +1,10 @@
+deep-translator
+requests
+beautifulsoup4
+sumy
+streamlit 
+matplotlib 
+wordcloud
+yake 
+google-genai
+pdf-plumber
