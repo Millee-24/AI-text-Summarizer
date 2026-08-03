@@ -2,10 +2,10 @@ deep-translator
 requests
 beautifulsoup4
 sumy
-streamlit 
-matplotlib 
+streamlit
+matplotlib
 wordcloud
-yake 
+yake
 google-genai
 pdfplumber
 flask
