@@ -1,6 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import traceback
+import nltk
+
+# Download required NLTK data for sumy tokenizers
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 from scraper import get_text
 from preprocess import clean_text
