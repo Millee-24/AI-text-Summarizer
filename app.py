@@ -1,7 +1,11 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import nltk
 
+# Download required NLTK data for sumy tokenizers
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 st.set_page_config(
     page_title="NLP Summarizer",
     page_icon="✦",
