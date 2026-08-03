@@ -67,13 +67,22 @@ def rewrite_the_summary_for_persona(summary, persona=None, word_limit=None):
         
     if persona in persona_prompts:
         prompt = persona_prompts[persona].format(word_limit=word_limit)
-        final_prompt = f"""{prompt}
-        SUMMARY:{summary}"""
-        response = Client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=final_prompt
-    )
-        return response.text.strip()
+        final_prompt = f"{prompt}\n        SUMMARY:{summary}"
+        
+        import time
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = Client.models.generate_content(
+                    model="gemini-2.5-flash-lite",
+                    contents=final_prompt
+                )
+                return response.text.strip()
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    raise e
+                time.sleep(2) # wait 2 seconds before retrying
+                
     else:
         return "Persona not supported"
     
