@@ -10,9 +10,9 @@ An intelligent, aesthetically-pleasing web application that not only summarizes 
     - 📚 *Student* (Exam-ready concepts)
     - 🎓 *Teacher* (Structured & clear)
     - 🌟 *Child* (Simple & friendly)
-- **Keyword Extraction & Highlighting:** Automatically identifies the most important concepts and highlights them intelligently in the final summary.
-- **Instant Translation:** Translate your generated summary into 20+ languages instantly.
-- **Stunning UI/UX:** A fully custom, dark-mode glassmorphism frontend with sleek micro-animations and staggered loading states.
+- Keyword Extraction & Highlighting: Automatically identifies the most important concepts and highlights them intelligently in the final summary.
+- Instant Translation: Translate your generated summary into 20+ languages instantly.
+
 
 ##  Architecture
 
